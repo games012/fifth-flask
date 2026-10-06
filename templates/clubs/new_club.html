@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <hr>
+        <form method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Club Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+                
+            </div>
+            <div class="mb-3">
+                <label for="year" class="form-label">Year</label>
+                <input type="number" class="form-control" id="year" name="year">
+                
+            </div>
+            <div class="mb-3">
+                <label for="stadium" class="form-label">Stadium</label>
+                <input type="text" class="form-control" id="stadium" name="stadium">
+                
+            </div>
+            <div class="mb-3">
+                <label for="image_url" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="image_url" name="image_url">
+                
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-outline-primary">
+                <i class="bi bi-plus-square-fill"></i> New Club
+            </button>
+            </form>
+        </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <hr>
+        <div class="card">
+            <img src="{{player.image_url}}" class="img-thumb mt-3" alt="..." width="256" height="256">
+            <div class="card-body">
+                <h1>{{player.name}}</h1>
+                <hr>
+                <h3>Nationality: {{player.nationality}}</h3>
+                <hr>
+                <h3>Shirt Number: {{player.shirt_number}}</h3>
+                <hr>
+                <h3>Position: {{player.position}}</h3>
+                <hr>
+                <h3>Club Name: {{player.club.name}}</h3>
+                <hr>
+                <a href="#" class="btn btn-outline-success" title="Edit Club">
+                    <i class="bi bi-pencil-square"></i> Edit Player
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

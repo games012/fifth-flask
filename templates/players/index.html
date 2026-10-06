@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <hr>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <a href="{{url_for('new_player')}}" class="btn btn-outline-primary float-end">
+                    <i class="bi bi-person-plus-fill"></i> Add New Player
+                </a>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Player Name</th>
+                <th scope="col">Action</th>                
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{player.name}}</td>
+                        <td>
+                            <a href="{{url_for('player_detail', id=player.id)}}" class="btn btn-outline-success btn-sm">
+                                <i class="bi bi-card-checklist"></i>
+                            </a>
+                        </td>                
+                    </tr>
+                {% endfor %}
+                
+                
+                
+            </tbody>
+            </table>
+    </div>
+{% endblock %}

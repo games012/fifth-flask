@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <hr>
+        <div class="card">
+            <img src="{{club.image_url}}" class="card-img-top mt-3" alt="..." width="256" height="256">
+            <div class="card-body">
+                <h1>{{club.name}}</h1>
+                <hr>
+                <h3>Stadium: {{club.stadium}}</h3>
+                <hr>
+                <h3>EST: {{club.year}}</h3>
+                <hr>
+                <a href="{{url_for('edit_club', id=club.id)}}" class="btn btn-outline-success" title="Edit Club">
+                    <i class="bi bi-pencil-square"></i> Edit Club
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

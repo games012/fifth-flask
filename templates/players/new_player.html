@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <hr>
+        <form method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Player Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+                
+            </div>
+            <div class="mb-3">
+                <label for="nationality" class="form-label">Nationality</label>
+                <input type="text" class="form-control" id="nationality" name="nationality">
+                
+            </div>
+            <div class="mb-3">
+                <label for="position" class="form-label">Position</label>
+                <select class="form-select" aria-label="Default select example" name="position">
+                    <option value="Goalkeeper">Goalkeeper</option>
+                    <option value="Defender">Defender</option>
+                    <option value="Midfielder">Midfielder</option>
+                    <option value="Forward">Forward</option>
+                </select>
+                
+            </div>
+            <div class="mb-3">
+                <label for="shirt_number" class="form-label">Shirt Number</label>
+                <input type="text" class="form-control" id="shirt_number" name="shirt_number">
+                
+            </div>
+            <div class="mb-3">
+                <label for="image_url" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="image_url" name="image_url">
+                
+            </div>
+            <div class="mb-3">
+                <label for="club" class="form-label">Select Club</label>
+                <select class="form-select" aria-label="Default select example" name="club_id">
+                    {% for club in clubs %}
+                            <option value="{{club.id}}">{{club.name}}</option>
+                    {% endfor %}
+                    
+                    
+                </select>
+            </div>
+            
+            <hr>
+            <button type="submit" class="btn btn-outline-primary">
+                <i class="bi bi-plus-square-fill"></i> New Player
+            </button>
+            </form>
+        </div>
+{% endblock %}
