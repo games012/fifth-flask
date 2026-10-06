@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Integer, ForeignKey, String, Date, Text  
 from sqlalchemy.orm import mapped_column, Mapped, relationship
@@ -71,7 +71,8 @@ def new_club():
         club = Club(name=name, year=year, stadium=stadium, image_url=image_url)
         db.session.add(club)
         db.session.commit()
-
+        flash('Add new club successfully', 'success')
+        
         return redirect(url_for('clubs'))
 
     return render_template('clubs/new_club.html', title='New Club Page')
